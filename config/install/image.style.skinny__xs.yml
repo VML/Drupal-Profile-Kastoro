@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: skinny__xs
+label: 'Skinny: XSmall (50x100)'
+effects:
+  cc31fead-ff68-4bcb-b0f9-019143c2d3fb:
+    uuid: cc31fead-ff68-4bcb-b0f9-019143c2d3fb
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 100
+      crop_type: focal_point
+pipeline: smushit

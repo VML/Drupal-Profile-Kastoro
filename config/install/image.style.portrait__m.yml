@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait__m
+label: 'Portrait: Medium (600x800)'
+effects:
+  7a785b3c-cdf2-4b60-8bba-55d613352146:
+    uuid: 7a785b3c-cdf2-4b60-8bba-55d613352146
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 800
+      crop_type: focal_point
+pipeline: smushit

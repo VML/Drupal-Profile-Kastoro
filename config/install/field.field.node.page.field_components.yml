@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.content
+    - paragraphs.paragraphs_type.embed_block
+    - paragraphs.paragraphs_type.embed_iframe
+    - paragraphs.paragraphs_type.embed_view
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.pod
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.slider
+    - paragraphs.paragraphs_type.tabs
+  module:
+    - entity_reference_revisions
+id: node.page.field_components
+field_name: field_components
+entity_type: node
+bundle: page
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content: content
+      accordion: accordion
+      embed_block: embed_block
+      embed_iframe: embed_iframe
+      embed_view: embed_view
+      hero: hero
+      media: media
+      pod: pod
+      section: section
+      slider: slider
+      tabs: tabs
+    target_bundles_drag_drop:
+      content:
+        enabled: true
+        weight: -35
+      accordion:
+        enabled: true
+        weight: -34
+      accordion_item:
+        weight: -33
+        enabled: false
+      embed_block:
+        enabled: true
+        weight: -32
+      embed_iframe:
+        enabled: true
+        weight: -31
+      embed_view:
+        enabled: true
+        weight: -30
+      hero:
+        enabled: true
+        weight: -29
+      hero_slide:
+        weight: -28
+        enabled: false
+      media:
+        enabled: true
+        weight: -27
+      pod:
+        enabled: true
+        weight: -26
+      pod_pea_content:
+        weight: -25
+        enabled: false
+      section:
+        enabled: true
+        weight: -24
+      slider:
+        enabled: true
+        weight: -23
+      slider_slide_photo:
+        weight: -22
+        enabled: false
+      slider_slide_video:
+        weight: -21
+        enabled: false
+      tabs:
+        enabled: true
+        weight: -20
+      tabs_tab:
+        weight: -19
+        enabled: false
+field_type: entity_reference_revisions

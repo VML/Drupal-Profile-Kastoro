@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square__l
+label: 'Square: Large (1150x1150)'
+effects:
+  ecf924ed-1c2c-4f4e-aeb0-68f86d846ff7:
+    uuid: ecf924ed-1c2c-4f4e-aeb0-68f86d846ff7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1150
+      height: 1150
+      crop_type: focal_point
+pipeline: smushit

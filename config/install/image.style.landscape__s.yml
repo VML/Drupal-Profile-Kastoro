@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: landscape__s
+label: 'Landscape: Small (600x450)'
+effects:
+  ba58e34e-0ae6-4117-8038-2471dccbff5d:
+    uuid: ba58e34e-0ae6-4117-8038-2471dccbff5d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 450
+      crop_type: focal_point
+pipeline: smushit

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square__s
+label: 'Square: Small (450x450)'
+effects:
+  5a7e3f29-019a-4cad-b01f-427c53b9f5e9:
+    uuid: 5a7e3f29-019a-4cad-b01f-427c53b9f5e9
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 450
+      crop_type: focal_point
+pipeline: smushit

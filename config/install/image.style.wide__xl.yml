@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide__xl
+label: 'Wide: XLarge (2250x1500)'
+effects:
+  4feaac29-02da-420d-88b6-bc279ae12025:
+    uuid: 4feaac29-02da-420d-88b6-bc279ae12025
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2250
+      height: 1500
+      crop_type: focal_point
+pipeline: smushit

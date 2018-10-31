@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait__xl
+label: 'Portrait: XLarge (1125x1500)'
+effects:
+  be491771-522a-4702-bf26-8fbf528a440e:
+    uuid: be491771-522a-4702-bf26-8fbf528a440e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1125
+      height: 1500
+      crop_type: focal_point
+pipeline: smushit

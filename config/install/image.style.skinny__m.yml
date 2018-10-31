@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: skinny__m
+label: 'Skinny: Medium (400x800)'
+effects:
+  4e0241d7-5929-4381-86aa-79578d02a589:
+    uuid: 4e0241d7-5929-4381-86aa-79578d02a589
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 800
+      crop_type: focal_point
+pipeline: smushit

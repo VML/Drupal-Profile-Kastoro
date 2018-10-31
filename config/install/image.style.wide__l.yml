@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide__l
+label: 'Wide: Large (1725x1150)'
+effects:
+  e7cc8160-8eb5-48a7-90c1-6cf5c7b674ec:
+    uuid: e7cc8160-8eb5-48a7-90c1-6cf5c7b674ec
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1725
+      height: 1150
+      crop_type: focal_point
+pipeline: smushit

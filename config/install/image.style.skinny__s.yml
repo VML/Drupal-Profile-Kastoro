@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: skinny__s
+label: 'Skinny: Small (225x450)'
+effects:
+  542d9768-82e0-4a5f-95a9-6edce0ebe962:
+    uuid: 542d9768-82e0-4a5f-95a9-6edce0ebe962
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 225
+      height: 450
+      crop_type: focal_point
+pipeline: smushit

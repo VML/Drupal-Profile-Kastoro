@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait__l
+label: 'Portrait: Large (863x1150)'
+effects:
+  3e9441e2-8af7-4539-8f36-6a02d1e1d69a:
+    uuid: 3e9441e2-8af7-4539-8f36-6a02d1e1d69a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 863
+      height: 1150
+      crop_type: focal_point
+pipeline: smushit

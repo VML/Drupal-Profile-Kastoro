@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: skinny__xl
+label: 'Skinny: XLarge (750x1500)'
+effects:
+  8f982d0c-22b6-44ff-a16e-41cbfe6331e8:
+    uuid: 8f982d0c-22b6-44ff-a16e-41cbfe6331e8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 1500
+      crop_type: focal_point
+pipeline: smushit

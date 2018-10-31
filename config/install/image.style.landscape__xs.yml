@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: landscape__xs
+label: 'Landscape: XSmall (133x100)'
+effects:
+  6a7522a5-c75e-432a-b43d-87cac103f7bd:
+    uuid: 6a7522a5-c75e-432a-b43d-87cac103f7bd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 133
+      height: 100
+      crop_type: focal_point
+pipeline: smushit

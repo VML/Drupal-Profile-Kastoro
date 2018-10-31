@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: skinny__l
+label: 'Skinny: Large (575x1150)'
+effects:
+  a1d65268-f2eb-4696-9d6d-8bf86b800849:
+    uuid: a1d65268-f2eb-4696-9d6d-8bf86b800849
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 575
+      height: 1150
+      crop_type: focal_point
+pipeline: smushit

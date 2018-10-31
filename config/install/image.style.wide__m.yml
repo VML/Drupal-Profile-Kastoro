@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide__m
+label: 'Wide: Medium (1200x800)'
+effects:
+  85561a7f-ccca-43e8-bd8e-c9da3d7a96e7:
+    uuid: 85561a7f-ccca-43e8-bd8e-c9da3d7a96e7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 800
+      crop_type: focal_point
+pipeline: smushit

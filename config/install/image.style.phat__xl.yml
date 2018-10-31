@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: phat__xl
+label: 'Phat: XLarge (3000x1500)'
+effects:
+  07c6f1c1-dae1-4163-97a0-f424f6384167:
+    uuid: 07c6f1c1-dae1-4163-97a0-f424f6384167
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 3000
+      height: 1500
+      crop_type: focal_point
+pipeline: smushit

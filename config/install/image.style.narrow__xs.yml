@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: narrow__xs
+label: 'Narrow: XSmall (67x100)'
+effects:
+  4a6dbad9-733b-4d38-b198-c7368648c468:
+    uuid: 4a6dbad9-733b-4d38-b198-c7368648c468
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 67
+      height: 100
+      crop_type: focal_point
+pipeline: smushit

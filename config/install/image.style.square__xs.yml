@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square__xs
+label: 'Square: XSmall (100x100)'
+effects:
+  b518c440-5308-4d6b-bf70-78c78bce9b38:
+    uuid: b518c440-5308-4d6b-bf70-78c78bce9b38
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 100
+      crop_type: focal_point
+pipeline: smushit

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: narrow__xl
+label: 'Narrow: XLarge (1000x1500)'
+effects:
+  9ebd02b5-f05e-4fe4-932a-113ce9afecdb:
+    uuid: 9ebd02b5-f05e-4fe4-932a-113ce9afecdb
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 1500
+      crop_type: focal_point
+pipeline: smushit

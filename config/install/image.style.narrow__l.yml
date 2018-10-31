@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: narrow__l
+label: 'Narrow: Large (767x1150)'
+effects:
+  453bb3dc-5781-440e-a734-1cca704d07a0:
+    uuid: 453bb3dc-5781-440e-a734-1cca704d07a0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 767
+      height: 1150
+      crop_type: focal_point
+pipeline: smushit
