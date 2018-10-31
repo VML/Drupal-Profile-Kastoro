@@ -1,2 +1,2 @@
-# Drupal Profile: Waterwork
-An opinionated profile with helpful components. Best used with the Chowder scaffolding theme.
+# Drupal Profile: Kastoro
+An opinionated profile with helpful components. Best used with the Denim scaffolding theme.
