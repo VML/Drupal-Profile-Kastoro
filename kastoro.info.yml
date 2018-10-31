@@ -1,9 +1,9 @@
-name: Waterwork
+name: Kastoro
 type: profile
-description: 'Opinionated, helpful components that go well with Chowder-based soups.'
+description: 'Common but opinionated configuration with helpful components that look good in Denim-based apparel.'
 version: VERSION
 core: 8.x
-'base profile': groundwork
+'base profile': kastoro
 dependencies:
   - address
   - admin_toolbar

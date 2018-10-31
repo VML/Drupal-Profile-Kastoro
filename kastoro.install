@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the Waterwork install profile.
+ * Install, update and uninstall functions for the Kastoro install profile.
  */
 
 use Drupal\Core\Config\ConfigImporter;
@@ -23,7 +23,7 @@ use Webmozart\PathUtil\Path;
  *
  * @see system_install()
  */
-function waterwork_install() {
+function kastoro_install() {
   // Set front page to "node".
   \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
 
@@ -71,45 +71,45 @@ function waterwork_install() {
 /**
  * Implements hook_install_tasks_alter().
  */
-function waterwork_install_tasks_alter(&$tasks, $install_state) {
-  $tasks['waterwork_install_tasks_clean'] = [
+function kastoro_install_tasks_alter(&$tasks, $install_state) {
+  $tasks['kastoro_install_tasks_clean'] = [
     'display_name' => t('Cleanup and finalize install'),
     'type' => 'batch',
   ];
-  $tasks['waterwork_install_tasks_config_export'] = [
+  $tasks['kastoro_install_tasks_config_export'] = [
     'display_name' => t('Export default configuration'),
     'type' => 'batch',
   ];
-  $tasks['waterwork_install_tasks_config_import'] = [
+  $tasks['kastoro_install_tasks_config_import'] = [
     'display_name' => t('Import local configuration'),
     'type' => 'batch',
   ];
 }
 
 /**
- * Profile install task added in waterwork_install_tasks_alter().
+ * Profile install task added in kastoro_install_tasks_alter().
  *
  * This process does final configuration cleanup before configuration export and
  * reimport.
  */
-function waterwork_install_tasks_clean() {
+function kastoro_install_tasks_clean() {
   // Return batch process information.
   return [
     'operations' => [
-      ['_waterwork_install_tasks_clean_config_split_paths', []],
-      ['_waterwork_install_tasks_clean_config_split_duplication', []],
-      ['_waterwork_install_tasks_clean_updates', []]
+      ['_kastoro_install_tasks_clean_config_split_paths', []],
+      ['_kastoro_install_tasks_clean_config_split_duplication', []],
+      ['_kastoro_install_tasks_clean_updates', []]
     ],
     'title' => t('Installation clean up'),
   ];
 }
 
 /**
- * Profile install batch process called in waterwork_install_tasks_clean().
+ * Profile install batch process called in kastoro_install_tasks_clean().
  *
  * Updates config split directories to be relevant to a sites sync directory.
  */
-function _waterwork_install_tasks_clean_config_split_paths(&$context) {
+function _kastoro_install_tasks_clean_config_split_paths(&$context) {
   $path_sync = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
 
   // Update existing split folder config to match this site's sync directory.
@@ -122,21 +122,21 @@ function _waterwork_install_tasks_clean_config_split_paths(&$context) {
   }
 
   // Update batch information
-  $context['results'][] = '_waterwork_install_tasks_clean_config_split_paths';
+  $context['results'][] = '_kastoro_install_tasks_clean_config_split_paths';
   $context['message'] = t('Updated configuration split directory paths');
 }
 
 /**
- * Profile install batch process called in waterwork_install_tasks_clean().
+ * Profile install batch process called in kastoro_install_tasks_clean().
  *
  * This duplicates profile Config Split directories into their corresponding
  * directories in the site config folder.
  */
-function _waterwork_install_tasks_clean_config_split_duplication(&$context) {
+function _kastoro_install_tasks_clean_config_split_duplication(&$context) {
   $filesystem = new Filesystem();
 
   // Get directory paths.
-  $path_profile = drupal_get_path('profile', 'waterwork');
+  $path_profile = drupal_get_path('profile', 'kastoro');
   $path_profile_config_splits = $path_profile . '/config/splits';
   $path_sync = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
 
@@ -166,16 +166,16 @@ function _waterwork_install_tasks_clean_config_split_duplication(&$context) {
   }
 
   // Update batch information
-  $context['results'][] = '_waterwork_install_tasks_clean_config_split_duplication';
+  $context['results'][] = '_kastoro_install_tasks_clean_config_split_duplication';
   $context['message'] = t('Replicated split configuration');
 }
 
 /**
- * Profile install batch process called in waterwork_install_tasks_clean().
+ * Profile install batch process called in kastoro_install_tasks_clean().
  *
  * This updates various configuration on the site.
  */
-function _waterwork_install_tasks_clean_updates(&$context) {
+function _kastoro_install_tasks_clean_updates(&$context) {
   $filesystem = new Filesystem();
 
   // Get directory paths.
@@ -226,21 +226,21 @@ function _waterwork_install_tasks_clean_updates(&$context) {
   }
 
   // Update batch information
-  $context['results'][] = '_waterwork_install_tasks_clean_updates';
+  $context['results'][] = '_kastoro_install_tasks_clean_updates';
   $context['message'] = t('Updated site settings');
 }
 
 /**
- * Profile install task added in waterwork_install_tasks_alter().
+ * Profile install task added in kastoro_install_tasks_alter().
  *
  * This finds profile Config Split directories and adds them to a batch process
  * to copy them into their corresponding site config directories. This is
  * required since the configuration loaded into the site from the profile
  * install folder is only the default configuration.
  */
-function waterwork_install_tasks_config_split() {
+function kastoro_install_tasks_config_split() {
   // Get directory paths.
-  $path_profile = drupal_get_path('profile', 'waterwork');
+  $path_profile = drupal_get_path('profile', 'kastoro');
   $path_profile_config_splits = $path_profile . '/config/splits';
   $path_sync = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
 
@@ -261,7 +261,7 @@ function waterwork_install_tasks_config_split() {
     // Make sure the 'file' is a split directory.
     if ($fileinfo->isDir() && !$fileinfo->isDot()) {
       $operations[] = [
-        '_waterwork_install_tasks_config_split',
+        '_kastoro_install_tasks_config_split',
         [$fileinfo->getFilename()]
       ];
     }
@@ -276,12 +276,12 @@ function waterwork_install_tasks_config_split() {
 }
 
 /**
- * Profile install batch process called in _waterwork_install_tasks_config_split().
+ * Profile install batch process called in _kastoro_install_tasks_config_split().
  *
  * This duplicates a profile Config Split directory into its corresponding
  * directory in the site config folder.
  */
-function _waterwork_install_tasks_config_split($split_name, &$context) {
+function _kastoro_install_tasks_config_split($split_name, &$context) {
   $filesystem = new Filesystem();
 
   // Add items to batch sandbox if they don't already exist
@@ -290,7 +290,7 @@ function _waterwork_install_tasks_config_split($split_name, &$context) {
   }
 
   // Get directory paths.
-  $path_profile = drupal_get_path('profile', 'waterwork');
+  $path_profile = drupal_get_path('profile', 'kastoro');
   $path_profile_config_splits = $path_profile . '/config/splits';
   $path_sync = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
 
@@ -331,13 +331,13 @@ function _waterwork_install_tasks_config_split($split_name, &$context) {
 }
 
 /**
- * Profile install task added in waterwork_install_tasks_alter().
+ * Profile install task added in kastoro_install_tasks_alter().
  *
  * This task does an initial export into the site's default config folder. This
  * primes the site to allow a config import after form submission which switches
  * the site to the local version of the configuration.
  */
-function waterwork_install_tasks_config_export() {
+function kastoro_install_tasks_config_export() {
   // Get directory path.
   $path_sync = Path::canonicalize(config_get_config_directory(CONFIG_SYNC_DIRECTORY));
 
@@ -350,7 +350,7 @@ function waterwork_install_tasks_config_export() {
   $operations = [];
   foreach ($source_storage->listAll() as $name) {
     $operations[] = [
-      '_waterwork_install_tasks_config_export',
+      '_kastoro_install_tasks_config_export',
       [
         $name,
         $source_storage,
@@ -369,11 +369,11 @@ function waterwork_install_tasks_config_export() {
 }
 
 /**
- * Profile install batch process called in waterwork_install_tasks_config_export().
+ * Profile install batch process called in kastoro_install_tasks_config_export().
  *
  * This exports a specific configuration item on a site.
  */
-function _waterwork_install_tasks_config_export($name, StorageInterface $source_storage, StorageInterface $target_storage, array &$context) {
+function _kastoro_install_tasks_config_export($name, StorageInterface $source_storage, StorageInterface $target_storage, array &$context) {
   $target_storage->write($name, $source_storage->read($name));
 
   // Update batch information
@@ -381,11 +381,11 @@ function _waterwork_install_tasks_config_export($name, StorageInterface $source_
 }
 
 /**
- * Profile install task added in waterwork_install_tasks_alter().
+ * Profile install task added in kastoro_install_tasks_alter().
  *
  * This task imports the local configuration into the site after site install.
  */
-function waterwork_install_tasks_config_import() {
+function kastoro_install_tasks_config_import() {
   /** @var \Drupal\config_filter\ConfigFilterManagerInterface $config_filter_manager */
   $config_filter_manager = \Drupal::service('plugin.manager.config_filter');
   $config_manager = \Drupal::service('config.manager');

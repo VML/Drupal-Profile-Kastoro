@@ -11,12 +11,12 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_FORM_ID_alter() for install_configure_form.
  * @see \Drupal\Core\Installer\Form\SiteConfigureForm
  */
-function waterwork_form_install_configure_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function kastoro_form_install_configure_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
   // Remove messages from installed modules.
   \Drupal::messenger()->deleteByType('status');
 
   // Attach the relevant submit handler for this profile.
-  $form['#submit'][] = 'waterwork_form_install_configure_submit';
+  $form['#submit'][] = 'kastoro_form_install_configure_submit';
 
   $form['environment_settings'] = [
     '#type' => 'fieldgroup',
@@ -51,13 +51,13 @@ function waterwork_form_install_configure_form_alter(&$form, \Drupal\Core\Form\F
 }
 
 /**
- * Submission handler for @see waterwork_form_install_configure_form_alter().
+ * Submission handler for @see kastoro_form_install_configure_form_alter().
  *
  * Note: A split's stage_file_proxy url is updated in the batch process
- * @see _waterwork_install_tasks_config_split() during site install using
+ * @see _kastoro_install_tasks_config_split() during site install using
  * the remote_prod environment indicator url.
  */
-function waterwork_form_install_configure_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+function kastoro_form_install_configure_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
   $environment_storage = \Drupal::entityTypeManager()->getStorage('environment_indicator');
   foreach ($environment_storage->loadMultiple() as $environment_indicator) {
     /** @var \Drupal\environment_indicator\Entity\EnvironmentIndicator $environment_indicator */
