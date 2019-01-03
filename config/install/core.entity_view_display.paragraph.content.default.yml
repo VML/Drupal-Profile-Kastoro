@@ -4,10 +4,12 @@ dependencies:
   config:
     - field.field.paragraph.content.field_class_custom
     - field.field.paragraph.content.field_content
+    - field.field.paragraph.content.field_link
     - field.field.paragraph.content.field_style
     - field.field.paragraph.content.field_title
     - paragraphs.paragraphs_type.content
   module:
+    - link
     - text
 id: paragraph.content.default
 targetEntityType: paragraph
@@ -28,6 +30,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_link:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_style:
     type: entity_reference_label

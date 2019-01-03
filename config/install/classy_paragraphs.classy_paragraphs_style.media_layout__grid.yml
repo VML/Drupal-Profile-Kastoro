@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media_layout__grid
-label: Grid
-classes: component-media--layout-grid

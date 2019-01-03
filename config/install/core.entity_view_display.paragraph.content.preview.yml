@@ -5,11 +5,13 @@ dependencies:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content.field_class_custom
     - field.field.paragraph.content.field_content
+    - field.field.paragraph.content.field_link
     - field.field.paragraph.content.field_style
     - field.field.paragraph.content.field_title
     - paragraphs.paragraphs_type.content
   module:
     - field_group
+    - link
     - smart_trim
 third_party_settings:
   field_group:
@@ -31,6 +33,7 @@ third_party_settings:
       children:
         - field_title
         - field_content
+        - field_link
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -73,6 +76,18 @@ content:
     third_party_settings: {  }
     type: smart_trim
     region: content
+  field_link:
+    type: link_separate
+    weight: 2
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_style:
     type: entity_reference_label
     weight: 2

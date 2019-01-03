@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.slider_slide_photo.field_content
     - field.field.paragraph.slider_slide_photo.field_image
     - field.field.paragraph.slider_slide_photo.field_title
-    - image.style.portrait__m
+    - image.style.medium_portrait_3x4
     - paragraphs.paragraphs_type.slider_slide_photo
   module:
     - image
@@ -27,7 +27,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: portrait__m
+      image_style: medium_portrait_3x4
       image_link: ''
     third_party_settings: {  }
     type: image

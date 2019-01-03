@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media_layout__full
-label: Full
-classes: component-media--layout-full

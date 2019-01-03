@@ -4,11 +4,13 @@ dependencies:
   config:
     - field.field.paragraph.content.field_class_custom
     - field.field.paragraph.content.field_content
+    - field.field.paragraph.content.field_link
     - field.field.paragraph.content.field_style
     - field.field.paragraph.content.field_title
     - paragraphs.paragraphs_type.content
   module:
     - field_group
+    - linkit
     - text
 third_party_settings:
   field_group:
@@ -45,6 +47,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit
     region: content
   field_style:
     weight: 1

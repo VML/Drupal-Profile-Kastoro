@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media__example
-label: Example
-classes: component-media--example

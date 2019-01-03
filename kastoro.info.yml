@@ -30,7 +30,6 @@ dependencies:
   - config_ignore
   - config_split
   - contextual
-  - critical_css
   - crop
   - ctools
   - datetime
@@ -95,6 +94,7 @@ dependencies:
   - views
   - viewsreference
 
+  - allowed_formats
   - bg_image_formatter
   - block_field
   - classy_paragraphs
@@ -103,14 +103,19 @@ dependencies:
   - field_group_settings
   - file
   - focal_point
+  - google_tag
   - image
   - link
   - media
   - media_library
+  - media_responsive_thumbnail
+  - metatag_mobile
   - node
   - paragraphs
   - responsive_image
   - smart_trim
+  - telephone_formatter
+  - telephone_validation
   - text
   - video_embed_field
   - video_embed_media

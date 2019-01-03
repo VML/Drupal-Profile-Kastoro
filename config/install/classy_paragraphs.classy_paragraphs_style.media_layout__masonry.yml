@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media_layout__masonry
-label: Masonry
-classes: component-media--layout-masonry

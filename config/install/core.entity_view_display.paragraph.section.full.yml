@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.section.field_components
     - field.field.paragraph.section.field_image_background
     - field.field.paragraph.section.field_style
-    - image.style.large_cropped
+    - image.style.large_1x1
     - paragraphs.paragraphs_type.section
   module:
     - bg_image_formatter
@@ -32,7 +32,7 @@ content:
     region: content
     label: hidden
     settings:
-      image_style: large_cropped
+      image_style: large_1x1
       css_settings:
         bg_image_selector: '.paragraph--view-mode-full[data-entity-id="[paragraph:id]"]'
         bg_image_z_index: ''

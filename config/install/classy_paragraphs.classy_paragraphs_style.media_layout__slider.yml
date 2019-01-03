@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media_layout__slider
-label: Slider
-classes: component-media--layout-slider

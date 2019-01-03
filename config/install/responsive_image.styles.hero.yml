@@ -2,9 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.phat__l
-    - image.style.phat__m
-    - image.style.phat__xl
+    - image.style.huge_landscape_2x1
+    - image.style.large_landscape_2x1
+    - image.style.medium_landscape_2x1
+    - image.style.small_landscape_2x1
 id: hero
 label: Hero
 image_style_mappings:
@@ -13,10 +14,10 @@ image_style_mappings:
     multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
-      sizes: '100vw'
+      sizes: 100vw
       sizes_image_styles:
-        - phat__l
-        - phat__m
-        - phat__xl
+        - huge_landscape_2x1
+        - large_landscape_2x1
+        - medium_landscape_2x1
 breakpoint_group: denim
-fallback_image_style: portrait__m
+fallback_image_style: small_landscape_2x1
