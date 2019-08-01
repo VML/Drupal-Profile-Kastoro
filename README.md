@@ -1,2 +1,2 @@
 # Drupal Profile: Kastoro
-An opinionated profile with helpful components. Best used with the Denim scaffolding theme.
+THIS HAS BEEN DEPRECATED IN FAVOR OF https://github.com/VML/Drupal-Profile-Blackbird.
